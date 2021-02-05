@@ -1,0 +1,102 @@
+﻿@model IEnumerable<WypozyczalniaFilmow.Models.Film>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>LIST OF ALL MOVIES</h1>
+<br />
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<br />
+<span id="Message" class="d-none">@TempData["Message"]</span>
+
+<form method="get"  asp-action="Index">
+    <p>
+        <input placeholder="Enter Movie Name/Genre/Director/Availabity......."
+               value="@ViewData["CurrentFilter"]" name="FilmSearch" 
+        style="width: 100%;
+        border-radius: 5px;
+        height: 50px;
+        margin: 0px;
+        border: 2px solid #ccc;" />
+
+        
+
+    <p>
+        <button type="submit" value="Search" class="btn btn-primary" style="width:20%;"><i class="fa fa-search fa-sm"></i>    Search</button>
+
+        <a asp-action="Index" class="btn btn-dark"> Get All Movies</a>
+    </p>
+
+    <br />
+</form>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.Name)</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["GenreSortParm"]">@Html.DisplayNameFor(model => model.Genre)</a>
+            </th>
+            <th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["DirectorSortParm"]">@Html.DisplayNameFor(model => model.Director)</a>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Available)
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Director)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Available)
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.FilmID" class="text-dark "><i class="fa fa-edit fa-lg"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.FilmID" class="text-info "><i class="fa fa-bars fa-lg"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.FilmID" class="text-danger" ml-1><i class="fa fa-trash-alt fa-lg"></i></a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts
+{
+
+ @*Uzywanie biblioteki*@
+    <script>
+        $(document).ready(function () {
+            var message = $('#Message').text();
+            if (message !== '') {
+                toastr.success(message);
+            }
+
+        });
+
+    </script>
+
+}
