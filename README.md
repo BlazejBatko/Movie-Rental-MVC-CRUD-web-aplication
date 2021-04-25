@@ -15,7 +15,7 @@ DefaultConnection = " "
 ## Usage
 
 # Sign up and sign in
-![Alt Text](https://recordit.co/uy4L3YRAuD.gif)
+![Alt Text](https://prnt.sc/121rs8a)
 
 
 # Post and delete with token
