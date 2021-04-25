@@ -1,5 +1,5 @@
 
-## Rest Api about films library with users authorization
+## MVC web application with crud operations on database for movie rental store.
 
 ### how to run
 ```
@@ -26,6 +26,8 @@ DefaultConnection = " "
 # Sort and search functionality on a crud table
 ![Alt Text](https://recordit.co/chCipKCVsy.gif)
 
+# Add a new record to database with toastr alert.
+![Alt Text](https://recordit.co/UeANXIGG9i.gif)
 
 
 
