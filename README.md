@@ -15,15 +15,16 @@ DefaultConnection = " "
 
 ## Usage
 
-# Sign up and sign in
+# Home page
 ![Index](https://user-images.githubusercontent.com/61236659/116003888-79e20b00-a600-11eb-9f8c-4620bcacdafc.png)
 
 
-# Post and delete with token
-![Alt Text](https://recordit.co/lfIt4QGbMH.gif)
+# Login and Sign up with regular expression
 
-# Get, Get specific and patch
-![Alt Text](https://recordit.co/qEVkeTeujN.gif)
+![login](https://user-images.githubusercontent.com/61236659/116003955-c3325a80-a600-11eb-906a-e39234de81b2.png)
+
+# Sort and search functionality on a crud table
+![Alt Text](https://recordit.co/chCipKCVsy.gif)
 
 
 
